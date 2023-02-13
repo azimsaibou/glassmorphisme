@@ -1,0 +1,95 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;/*font pour tous*/
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;/*taille minimal : */
+  background-color: #161623;
+  position: relative;
+}
+header::before{/**/
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #dd4124;/*taille pleine pour le rogner*/
+  clip-path: circle(50% at right 70%);/*30% de toute l'espace*/
+}
+header::after{/**/
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: turquoise;/*taille plein pour le rogner*/
+  clip-path: circle(50% at 10% 10%); /*20%fg de toute l'espace a 10% de x et 10% de y*/
+}
+/*.conteneur{
+  position: relative;
+}*/
+.carte{
+  
+  width: 280px;
+  height: 400px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);/*ombre : */
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);/*fond : */
+  overflow: hidden;
+  display: flex;/*pour centrer le contenu entier*/
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.2);/*bordure ayant couleur de fond mais moins transparent*/
+  border-left: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);/*blure tout ce qui est derriere la carte*/
+  z-index: 1;/*pour deplacer la carte devant l'element ::before*/
+}
+.carte .contenu{
+  padding: 20px;/*pour que le contenu soit eloigne de la boite contenu*/
+  text-align: center; /*centrer tous les tes donnees du contenu*/
+  /*transition: 0.5s;*/
+  transform: translateY(50%);/*deplacer le contenu un peu hors de la carte, en bas*/
+  opacity: 0;/*que la boite contenu disparait par transparence*/
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;/*utiliser la transition entre cet etat et */
+  position: relative;
+}
+.carte:hover .contenu{/*changement du contenu si la souris arrive sur la carte*/
+  transform: translateY(0);
+  opacity: 1;
+}
+.contenu h2{
+  font-size: 8em;
+  position: absolute;/*pour que h2 soit positionne par rapport a la carte et non le contenu*/
+  top: -80px;
+  left: 50%; 
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.1);
+  pointer-events: none; /*pour que le curseur ne se transforme pas en bar de selection*/
+}
+.contenu h3{
+  font-size: 1.8em;/*1.8 fois la taille normale du texte*/
+  color: white;
+}
+.contenu a{
+  /**/
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;/*pour annuler la ligne decorante*/
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

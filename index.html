@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Glassmorphisme</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<!-- <div class="conteneur"> -->
+			<div class="carte">
+				<div class="contenu">
+					<h2>01</h2>
+					<h3>Carte 1</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eligendi beatae ut, eaque, sunt nihil perferendis ea quia ipsum, voluptate fugit, adipisci eius asperiores! Doloribus cumque molestias consectetur saepe eos!</p>
+					<a href="#">En savoir plus</a><!-- lien qui mene a lui meme -->
+				</div>
+			</div>
+		<!-- </div> -->
+	</header>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.js" integrity="sha512-Mfa0FGPN33LtU+puEaoEn1kAIFJYm2kMsipPbFefhcqz9lLVzxkN/NDFpaPUdmQuisESKXisMit5UkloQ8OtrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script type="text/javascript">
+		VanillaTilt.init(document.querySelector(".carte"), {/*que l'objet vanillaTilt s'initialise avec le noeud carte et un tableau d'options*/
+			max: 25,
+			speed: 400,
+		});
+</script>
+</body>
+</html>
